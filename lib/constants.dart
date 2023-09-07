@@ -13,3 +13,8 @@ const List<String> menuItems = [
   'Proceedings',
   'Contact Us',
 ];
+
+// SlideShow Duration
+
+const int showDuration = 5000;
+const int noOfImages = 5;
