@@ -20,6 +20,7 @@ dependencies:
   url_launcher: ^6.1.14
   timelines: ^0.1.0
   animations: ^2.0.8
+  google_fonts: ^5.1.0
 
 
 
