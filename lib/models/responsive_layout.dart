@@ -6,9 +6,9 @@ class ResponsiveLayout extends StatelessWidget {
   final Widget desktop;
 
   const ResponsiveLayout({
-    required this.mobile,
-    required this.tablet,
-    required this.desktop,
+    this.mobile = const SizedBox(),
+    this.tablet = const SizedBox(),
+    this.desktop = const SizedBox(),
     super.key,
   });
 
