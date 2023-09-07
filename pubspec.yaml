@@ -21,6 +21,7 @@ dependencies:
   timelines: ^0.1.0
   animations: ^2.0.8
   google_fonts: ^5.1.0
+  firebase_core: ^2.15.1
 
 
 
