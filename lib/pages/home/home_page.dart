@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:industrio_2023/models/responsive_layout.dart';
+import 'package:industrio_2023/pages/home/home_content.dart';
+import 'package:industrio_2023/pages/home/slideshow.dart';
 import 'package:industrio_2023/pages/widgets/custom_appbar.dart';
 import 'package:industrio_2023/pages/widgets/nav_drawer.dart';
 
@@ -8,9 +10,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
-        child: Column(children: [CustomAppbar()]),
+        child: Column(children: [
+          CustomAppbar(),
+          SlideShow(),
+          HomeContent(),
+        ]),
       ),
       drawer: ResponsiveLayout(
         mobile: NavDrawer(),

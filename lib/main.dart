@@ -11,6 +11,7 @@ void main() async {
       projectId: "industrio-2023",
       messagingSenderId: "719376501367",
       appId: "1:719376501367:web:019ed3f28250c51cdcd472",
+      storageBucket: "industrio-2023.appspot.com",
     ),
   );
   runApp(const MyApp());
@@ -18,8 +19,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
