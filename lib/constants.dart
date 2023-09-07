@@ -18,3 +18,7 @@ const List<String> menuItems = [
 
 const int showDuration = 5000;
 const int noOfImages = 5;
+
+// App Bar
+
+const double appBarHeight = 100.0;
