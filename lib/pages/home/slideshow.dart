@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:industrio_2023/constants.dart';
 
-class SlideShow extends StatefulWidget {
+class SlideShow extends StatelessWidget {
   const SlideShow({super.key});
 
-  @override
-  State<SlideShow> createState() => _SlideShowState();
-}
-
-class _SlideShowState extends State<SlideShow> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
