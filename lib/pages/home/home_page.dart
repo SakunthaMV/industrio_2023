@@ -3,6 +3,7 @@ import 'package:industrio_2023/models/responsive_layout.dart';
 import 'package:industrio_2023/pages/home/home_content.dart';
 import 'package:industrio_2023/pages/home/slideshow.dart';
 import 'package:industrio_2023/pages/widgets/custom_appbar.dart';
+import 'package:industrio_2023/pages/widgets/footer/common_footer.dart';
 import 'package:industrio_2023/pages/widgets/nav_drawer.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,6 +17,7 @@ class HomePage extends StatelessWidget {
         child: Column(children: [
           SlideShow(),
           HomeContent(),
+          CommonFooter(),
         ]),
       ),
       drawer: ResponsiveLayout(
