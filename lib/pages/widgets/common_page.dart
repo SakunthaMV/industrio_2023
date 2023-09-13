@@ -7,15 +7,17 @@ import 'package:industrio_2023/pages/widgets/nav_drawer.dart';
 
 class CommonPage extends StatelessWidget {
   final Widget content;
+  final String? page;
   const CommonPage({
     super.key,
     required this.content,
+    this.page,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(),
+      appBar: CustomAppbar(page: page),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,9 +27,9 @@ class CommonPage extends StatelessWidget {
           ],
         ),
       ),
-      drawer: const ResponsiveLayout(
-        mobile: NavDrawer(),
-        tablet: NavDrawer(),
+      drawer: ResponsiveLayout(
+        mobile: NavDrawer(page: page),
+        tablet: NavDrawer(page: page),
       ),
     );
   }

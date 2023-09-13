@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:industrio_2023/constants.dart';
 
 class NavDrawer extends StatelessWidget {
-  const NavDrawer({super.key});
+  final String? page;
+  const NavDrawer({super.key, this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +18,15 @@ class NavDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.1,
-                    color: ModalRoute.of(context)?.settings.name ==
+                    color: (page ?? ModalRoute.of(context)?.settings.name) ==
                             menuItems[index]
                         ? colorScheme.tertiary
                         : colorScheme.primary,
                   ),
             ),
             hoverColor: Colors.grey[300],
-            onTap: ModalRoute.of(context)?.settings.name != menuItems[index]
+            onTap: (page ?? ModalRoute.of(context)?.settings.name) !=
+                    menuItems[index]
                 ? () {
                     Navigator.pushReplacementNamed(context, menuItems[index]);
                   }

@@ -4,7 +4,8 @@ import 'package:industrio_2023/models/responsive_layout.dart';
 import 'package:industrio_2023/pages/widgets/logo_button.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppbar({super.key});
+  final String? page;
+  const CustomAppbar({super.key, this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,6 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 0.0,
       toolbarHeight: appBarHeight,
       leading: const SizedBox(),
-      elevation: 4.0,
       title: SizedBox(
         height: 70.0,
         child: ResponsiveLayout(
@@ -79,7 +79,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           children: List.generate(
             menuItems.length,
             (index) => TextButton(
-              onPressed: ModalRoute.of(context)?.settings.name !=
+              onPressed: (page ?? ModalRoute.of(context)?.settings.name) !=
                       menuItems[index]
                   ? () {
                       Navigator.pushReplacementNamed(context, menuItems[index]);
@@ -90,10 +90,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 style: textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.1,
-                  color:
-                      ModalRoute.of(context)?.settings.name == menuItems[index]
-                          ? colorScheme.tertiary
-                          : colorScheme.primary,
+                  color: (page ?? ModalRoute.of(context)?.settings.name) ==
+                          menuItems[index]
+                      ? colorScheme.tertiary
+                      : colorScheme.primary,
                 ),
               ),
             ),
