@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:industrio_2023/pages/home/home_page.dart';
+import 'package:industrio_2023/pages/people/people_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,13 +26,21 @@ class MyApp extends StatelessWidget {
       title: 'INDUSTRIO 2023',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.grey,
+          primary: Colors.black,
+          tertiary: Colors.amber,
+        ),
         useMaterial3: true,
         textTheme: TextTheme(
+          displayLarge: GoogleFonts.lato(),
           titleMedium: GoogleFonts.openSans(),
         ),
       ),
       home: const HomePage(),
+      routes: {
+        PeoplesPage.route: (context) => const PeoplesPage(),
+      },
     );
   }
 }
