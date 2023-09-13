@@ -12,6 +12,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 0.0,
       toolbarHeight: appBarHeight,
       leading: const SizedBox(),
+      elevation: 4.0,
       title: SizedBox(
         height: 70.0,
         child: ResponsiveLayout(
