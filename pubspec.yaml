@@ -43,6 +43,7 @@ flutter:
     - images/
     - images/slide_show/
     - images/external_links/
+    - images/speakers/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
