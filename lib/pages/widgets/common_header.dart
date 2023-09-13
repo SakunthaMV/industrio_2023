@@ -6,7 +6,6 @@ class CommonHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final double width = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -20,21 +19,17 @@ class CommonHeader extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              ModalRoute.of(context)?.settings.name ?? "",
-              style: textTheme.displayLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.1,
-              ),
+        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            ModalRoute.of(context)?.settings.name ?? "",
+            style: textTheme.displayLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.1,
             ),
-            SizedBox(
-              width: width * 0.4,
-            ),
-          ],
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:industrio_2023/constants.dart';
 import 'package:industrio_2023/models/responsive_layout.dart';
 import 'package:industrio_2023/pages/people/hover_button.dart';
+import 'package:industrio_2023/pages/people/organizing_commitee.dart';
+import 'package:industrio_2023/pages/people/sub_headings.dart';
 import 'package:industrio_2023/pages/widgets/common_page.dart';
 
 class PeoplesPage extends StatelessWidget {
@@ -15,7 +17,7 @@ class PeoplesPage extends StatelessWidget {
     return CommonPage(
       content: Column(
         children: [
-          subHeadings(context, 'Our Speakers'),
+          const SubHeadings('Our Speakers'),
           Wrap(
             children: List.generate(
               speakersDetails.length,
@@ -62,11 +64,13 @@ class PeoplesPage extends StatelessWidget {
               },
             ),
           ),
-          subHeadings(context, 'Our People'),
+          const SubHeadings('Our People'),
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: HoverButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, OrganizingCommitee.route);
+              },
               body: Wrap(
                 children: [
                   Container(
@@ -130,32 +134,6 @@ class PeoplesPage extends StatelessWidget {
               ),
             );
           },
-        ),
-      ),
-    );
-  }
-
-  Widget subHeadings(BuildContext context, String text) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0),
-      child: RichText(
-        text: TextSpan(
-          style: textTheme.displaySmall?.copyWith(
-            wordSpacing: 1.5,
-            letterSpacing: 1.1,
-          ),
-          children: [
-            TextSpan(
-              text: '${text.split(' ').first} ',
-            ),
-            TextSpan(
-              text: text.split(' ').last,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
         ),
       ),
     );
