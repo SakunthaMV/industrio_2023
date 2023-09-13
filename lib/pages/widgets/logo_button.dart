@@ -11,7 +11,11 @@ class LogoButton extends StatelessWidget {
       hoverColor: Colors.transparent,
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
-      onTap: () {},
+      onTap: () {
+        if (ModalRoute.of(context)?.settings.name != "/") {
+          Navigator.pushReplacementNamed(context, '/');
+        }
+      },
       child: Image.asset(logo),
     );
   }
