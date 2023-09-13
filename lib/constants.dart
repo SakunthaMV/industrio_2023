@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:industrio_2023/pages/people/people_page.dart';
 
 // Images
 const String logo = 'images/logo.png';
 
 // Menu
 const List<String> menuItems = [
-  'Home',
+  '/',
   'Schedule',
-  'People',
+  PeoplesPage.route,
   'Projects',
   'Posters',
   'Proceedings',
