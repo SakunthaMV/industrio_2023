@@ -1,20 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:industrio_2023/pages/people/people_page.dart';
+import 'package:industrio_2023/pages/posters/posters_page.dart';
+import 'package:industrio_2023/pages/proceeding/proceeding_page.dart';
+import 'package:industrio_2023/pages/projects/projects_page.dart';
+import 'package:industrio_2023/pages/schedule/schedule_page.dart';
 
 // Images
 const String logo = 'images/logo.png';
+const String oc = 'images/oc.png';
 
 // Menu
 const List<String> menuItems = [
   '/',
-  'Schedule',
+  SchedulePage.route,
   PeoplesPage.route,
-  'Projects',
-  'Posters',
-  'Proceedings',
-  'Contact Us',
+  ProjectsPage.route,
+  PostersPage.route,
+  ProceedingPage.route,
 ];
+
+// OC Distribution
+const List<String> ocDetails = [
+  'Event Chair',
+  'Event Coordinator',
+  'Editorial Committee',
+  'Publicity Committee',
+  'Planning Committee',
+];
+
+// Speakers
+const Map<String, dynamic> speakersDetails = {
+  'Prof. Gamini Dissanayake': [
+    'images/speakers/speaker1.png',
+    'Emeritus Professor at University of Technology, Sydney',
+  ],
+  'Eng. Jagath Jayasundara': [
+    'images/speakers/speaker2.png',
+    'CEO of Abans Electricals PLC',
+  ],
+};
 
 // SlideShow Duration
 const int showDuration = 5000;
