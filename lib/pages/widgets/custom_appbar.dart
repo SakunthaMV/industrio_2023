@@ -70,6 +70,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   Row desktopBar(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -77,12 +78,21 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           children: List.generate(
             menuItems.length,
             (index) => TextButton(
-              onPressed: () {},
+              onPressed: ModalRoute.of(context)?.settings.name !=
+                      menuItems[index]
+                  ? () {
+                      Navigator.pushReplacementNamed(context, menuItems[index]);
+                    }
+                  : null,
               child: Text(
-                menuItems[index],
+                menuItems[index] == "/" ? "Home" : menuItems[index],
                 style: textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.1,
+                  color:
+                      ModalRoute.of(context)?.settings.name == menuItems[index]
+                          ? colorScheme.tertiary
+                          : colorScheme.primary,
                 ),
               ),
             ),
