@@ -46,7 +46,9 @@ class _SchedulePageState extends State<SchedulePage> {
           SizedBox(
             height: size.height * 0.9,
             child: Timeline.tileBuilder(
+              shrinkWrap: true,
               builder: TimelineTileBuilder.connectedFromStyle(
+                connectionDirection: ConnectionDirection.before,
                 indicatorStyleBuilder: (context, index) =>
                     IndicatorStyle.outlined,
                 connectorStyleBuilder: (context, index) =>
@@ -55,9 +57,12 @@ class _SchedulePageState extends State<SchedulePage> {
                     ? ContentsAlign.alternating
                     : ContentsAlign.basic,
                 contentsBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: scheduleCard(),
                 ),
+                nodePositionBuilder: (context, index) =>
+                    size.width > 650 ? 0.5 : 0.02,
+                indicatorPositionBuilder: (context, index) => 0.2,
                 itemCount: 10,
               ),
             ),
