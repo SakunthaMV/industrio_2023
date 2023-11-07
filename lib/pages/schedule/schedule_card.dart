@@ -11,24 +11,24 @@ Widget scheduleCard() {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         timeCard(),
-        Text(
+        const Text(
           "Keynote Speech",
           style: TextStyle(
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
-        Text(
+        const Text(
           "By",
           style: TextStyle(color: Colors.white),
         ),
         const SizedBox(height: 10),
-        Text(
+        const Text(
           "Prof. Gamini Dissanayake",
           style: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
-        Text(
+        const Text(
           "Vice President of MEA",
           style: TextStyle(color: Colors.white),
         ),

@@ -3,6 +3,7 @@ import 'package:industrio_2023/pages/schedule/schedule_card.dart';
 import 'package:timelines/timelines.dart';
 
 class SchedulePage extends StatefulWidget {
+  static const routeName = "/schedule-page";
   const SchedulePage({super.key});
 
   @override
