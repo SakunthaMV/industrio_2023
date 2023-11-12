@@ -23,6 +23,7 @@ dependencies:
   google_fonts: ^5.1.0
   firebase_core: ^2.15.1
   flutter_image_slideshow: ^0.1.6
+  responsive_grid_list: ^1.4.0
 
 dev_dependencies:
   flutter_test:
