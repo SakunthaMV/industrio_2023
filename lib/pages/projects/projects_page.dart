@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:industrio_2023/pages/projects/project_card.dart';
 import 'package:responsive_grid_list/responsive_grid_list.dart';
 
@@ -38,6 +39,7 @@ class _ProjectPageState extends State<ProjectPage> {
           ],
         ),
       ),
+
     );
   }
 }
