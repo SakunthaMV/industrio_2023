@@ -17,51 +17,44 @@ class PeoplesPage extends StatelessWidget {
     return CommonPage(
       content: Column(
         children: [
-          const SubHeadings('Our Speakers'),
-          Wrap(
-            children: List.generate(
-              speakersDetails.length,
-              (index) {
-                return HoverButton(
-                  onTap: () {},
-                  body: SizedBox(
-                    width: width * 0.8 > 400.0 ? 400.0 : width * 0.8,
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.all(20.0),
-                          child: Image(
-                            width: 200,
-                            height: 200,
-                            fit: BoxFit.fitWidth,
-                            alignment: Alignment.topCenter,
-                            image: NetworkImage(
-                                'https://www.seekpng.com/png/full/110-1100707_person-avatar-placeholder.png'),
-                          ),
-                        ),
-                        FittedBox(
-                          child: Text(
-                            speakersDetails.keys.toList()[index],
-                            style: textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            speakersDetails.values.toList()[index][1],
-                            style: textTheme.bodyMedium?.copyWith(
-                              color: colorScheme.secondary,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
+          const SubHeadings('Our Speaker'),
+          HoverButton(
+            onTap: () {},
+            body: SizedBox(
+              width: width * 0.8 > 400.0 ? 400.0 : width * 0.8,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Image(
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.topCenter,
+                      image: NetworkImage(
+                          'https://www.seekpng.com/png/full/110-1100707_person-avatar-placeholder.png'),
                     ),
                   ),
-                );
-              },
+                  FittedBox(
+                    child: Text(
+                      'Prof. Gamini Dissanayake',
+                      style: textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      'CEO of Abans Electricals PLC',
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: colorScheme.secondary,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SubHeadings('Our People'),
@@ -85,7 +78,7 @@ class PeoplesPage extends StatelessWidget {
                           'Organizing \nCommittee',
                           style: textTheme.headlineLarge?.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: colorScheme.onSecondary,
+                            color: colorScheme.primary,
                             fontSize: 40.0,
                           ),
                         ),
@@ -130,7 +123,7 @@ class PeoplesPage extends StatelessWidget {
             return Text(
               ocDetails[index],
               style: textTheme.headlineSmall?.copyWith(
-                color: colorScheme.onSecondary,
+                color: colorScheme.secondary,
               ),
             );
           },

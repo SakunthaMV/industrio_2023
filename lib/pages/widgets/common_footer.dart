@@ -44,7 +44,7 @@ class CommonFooter extends StatelessWidget {
                   icon: Icon(
                     dmieDetails[index][1],
                     size: 35,
-                    color: colorScheme.secondary,
+                    color: colorScheme.tertiary,
                   ),
                   onPressed: () async {
                     externalLink(dmieDetails[index][2]);

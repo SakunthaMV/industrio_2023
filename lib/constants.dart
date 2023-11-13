@@ -16,7 +16,7 @@ const List<String> menuItems = [
   '/',
   SchedulePage.route,
   PeoplesPage.route,
-  ProjectsPage.route,
+  ProjectPage.route,
   PostersPage.route,
   ProceedingPage.route,
 ];

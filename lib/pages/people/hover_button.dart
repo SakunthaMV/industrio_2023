@@ -16,7 +16,7 @@ class HoverButton extends StatefulWidget {
 class _HoverButtonState extends State<HoverButton> {
   double scale = 1.0;
   double elevation = 1.0;
-  Color initialColor = Colors.blueGrey.shade50;
+
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -29,20 +29,19 @@ class _HoverButtonState extends State<HoverButton> {
             setState(() {
               scale = 1.075;
               elevation = 4.0;
-              initialColor = colorScheme.onPrimaryContainer;
             });
           } else {
             setState(() {
               scale = 1.0;
               elevation = 1.0;
-              initialColor = colorScheme.primaryContainer;
             });
           }
         },
-        child: Transform.scale(
+        child: AnimatedScale(
+          duration: const Duration(milliseconds: 150),
           scale: scale,
           child: Card(
-            color: initialColor,
+            color: colorScheme.tertiary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
