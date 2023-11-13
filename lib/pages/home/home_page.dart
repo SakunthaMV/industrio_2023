@@ -8,6 +8,7 @@ import 'package:industrio_2023/pages/widgets/common_footer.dart';
 import 'package:industrio_2023/pages/widgets/nav_drawer.dart';
 
 class HomePage extends StatelessWidget {
+  static const routeName = 'home-page';
   const HomePage({super.key});
 
   @override
