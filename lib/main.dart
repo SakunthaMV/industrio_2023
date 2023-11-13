@@ -36,13 +36,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xffCA9DB7),
           primary: Colors.black,
-          secondary: const Color(0xff29467C),
           background: Colors.white,
-          tertiary: const Color(0xffE9DBE7),
-          onTertiary: const Color(0xff6B71B8),
           onSecondary: const Color(0xffECC3A5),
-          primaryContainer: const Color(0xff6B71B8).withOpacity(0.05),
-          onPrimaryContainer: const Color(0xff6B71B8).withOpacity(0.1),
+          tertiary: const Color(0xffE9DBE7),
+          secondaryContainer: const Color(0xffCA9DB7),
+          primaryContainer: const Color(0xff6B71B8),
+          secondary: const Color(0xff29467C),
         ),
         useMaterial3: true,
         textTheme: TextTheme(
