@@ -8,6 +8,7 @@ import 'package:industrio_2023/pages/schedule/schedule_page.dart';
 
 // Images
 const String logo = 'images/logo.png';
+const String homeBackground = 'images/home_background.jpg';
 const String oc = 'images/oc.png';
 
 // Menu
