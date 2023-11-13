@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:industrio_2023/pages/schedule/schedule_card.dart';
 import 'package:timelines/timelines.dart';
 
@@ -70,6 +71,7 @@ class _SchedulePageState extends State<SchedulePage> {
           ),
         ],
       ),
+
     );
   }
 }

@@ -5,13 +5,16 @@ import 'package:industrio_2023/pages/schedule/schedule_page.dart';
 import 'package:industrio_2023/pages/widgets/logo_button.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppbar({super.key});
+  final String? page;
+  const CustomAppbar({super.key, this.page});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leadingWidth: 0.0,
       toolbarHeight: appBarHeight,
+      backgroundColor: Colors.transparent,
+      elevation: 0.0,
       leading: const SizedBox(),
       title: SizedBox(
         height: 70.0,
@@ -71,16 +74,33 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   Row desktopBar(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Row(
           children: List.generate(
             menuItems.length,
-            (index) => customTabButton(
-              onPressed: () {},
-              textTheme: textTheme,
-              title: menuItems[index],
+
+            (index) => TextButton(
+              onPressed: (page ?? ModalRoute.of(context)?.settings.name) !=
+                      menuItems[index]
+                  ? () {
+                      Navigator.pushReplacementNamed(context, menuItems[index]);
+                    }
+                  : null,
+              child: Text(
+                menuItems[index] == "/" ? "Home" : menuItems[index],
+                style: textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.1,
+                  color: (page ?? ModalRoute.of(context)?.settings.name) ==
+                          menuItems[index]
+                      ? colorScheme.tertiary
+                      : colorScheme.primary,
+                ),
+              ),
+
             ),
           ),
         ),
