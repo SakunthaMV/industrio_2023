@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:industrio_2023/constants.dart';
 import 'package:industrio_2023/models/responsive_layout.dart';
+import 'package:industrio_2023/pages/schedule/schedule_page.dart';
 import 'package:industrio_2023/pages/widgets/logo_button.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -76,15 +77,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         Row(
           children: List.generate(
             menuItems.length,
-            (index) => TextButton(
+            (index) => customTabButton(
               onPressed: () {},
-              child: Text(
-                menuItems[index],
-                style: textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.1,
-                ),
-              ),
+              textTheme: textTheme,
+              title: menuItems[index],
             ),
           ),
         ),
@@ -95,4 +91,20 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(appBarHeight);
+}
+
+Widget customTabButton(
+    {required void Function()? onPressed,
+    required TextTheme textTheme,
+    required String title}) {
+  return TextButton(
+    onPressed: onPressed,
+    child: Text(
+      title,
+      style: textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.bold,
+        letterSpacing: 1.1,
+      ),
+    ),
+  );
 }

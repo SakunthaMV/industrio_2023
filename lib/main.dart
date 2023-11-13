@@ -2,6 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:industrio_2023/pages/home/home_page.dart';
+import 'package:industrio_2023/pages/projects/project_item_page.dart';
+import 'package:industrio_2023/pages/schedule/schedule_page.dart';
+
+import 'pages/projects/projects_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +35,14 @@ class MyApp extends StatelessWidget {
           titleMedium: GoogleFonts.openSans(),
         ),
       ),
-      home: const HomePage(),
+      // home: const HomePage(),
+      initialRoute: ProjectPage.routeName,
+      routes: {
+        HomePage.routeName: (context) => const HomePage(),
+        SchedulePage.routeName: (context) => const SchedulePage(),
+        ProjectPage.routeName: (context) => const ProjectPage(),
+        ProjectItem.routeName: (context) => const ProjectItem()
+      },
     );
   }
 }
