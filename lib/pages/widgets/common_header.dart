@@ -6,6 +6,7 @@ class CommonHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -13,8 +14,9 @@ class CommonHeader extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Colors.grey.shade300,
-            Colors.grey.shade800,
+            colorScheme.secondary,
+            colorScheme.tertiary,
+            colorScheme.secondary,
           ],
         ),
       ),

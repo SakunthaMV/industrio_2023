@@ -3,18 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:industrio_2023/pages/home/home_page.dart';
 
-import 'package:industrio_2023/pages/projects/project_item_page.dart';
-
-
 import 'pages/projects/projects_page.dart';
 
 import 'package:industrio_2023/pages/people/organizing_commitee.dart';
 import 'package:industrio_2023/pages/people/people_page.dart';
 import 'package:industrio_2023/pages/posters/posters_page.dart';
 import 'package:industrio_2023/pages/proceeding/proceeding_page.dart';
-import 'package:industrio_2023/pages/projects/projects_page.dart';
 import 'package:industrio_2023/pages/schedule/schedule_page.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,33 +34,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.grey,
+          seedColor: const Color(0xffCA9DB7),
           primary: Colors.black,
+          secondary: const Color(0xff29467C),
           background: Colors.white,
-          tertiary: Colors.amber,
-          onSecondary: Colors.green.shade700,
-          primaryContainer: Colors.blueGrey.shade50,
-          onPrimaryContainer: Colors.blueGrey.shade100,
+          tertiary: const Color(0xffE9DBE7),
+          onTertiary: const Color(0xff6B71B8),
+          onSecondary: const Color(0xffECC3A5),
+          primaryContainer: const Color(0xff6B71B8).withOpacity(0.05),
+          onPrimaryContainer: const Color(0xff6B71B8).withOpacity(0.1),
         ),
         useMaterial3: true,
         textTheme: TextTheme(
-          displayLarge: GoogleFonts.lato(),
-          displaySmall: GoogleFonts.breeSerif(),
-          headlineLarge: GoogleFonts.crimsonText(),
-          titleLarge: GoogleFonts.notoSerif(),
+          displayLarge: GoogleFonts.poppins(),
+          displaySmall: GoogleFonts.workSans(),
+          headlineLarge: GoogleFonts.notoSans(),
+          titleLarge: GoogleFonts.ptSans(),
           titleMedium: GoogleFonts.openSans(),
         ),
       ),
-
       home: const HomePage(),
       routes: {
         SchedulePage.route: (context) => const SchedulePage(),
         PeoplesPage.route: (context) => const PeoplesPage(),
-        ProjectsPage.route: (context) => const ProjectsPage(),
+        ProjectPage.route: (context) => const ProjectPage(),
         PostersPage.route: (context) => const PostersPage(),
         ProceedingPage.route: (context) => const ProceedingPage(),
         OrganizingCommitee.route: (context) => const OrganizingCommitee(),
-
       },
     );
   }

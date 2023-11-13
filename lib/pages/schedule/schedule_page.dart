@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:industrio_2023/pages/schedule/schedule_card.dart';
+import 'package:industrio_2023/pages/widgets/common_page.dart';
 import 'package:timelines/timelines.dart';
 
 class SchedulePage extends StatefulWidget {
-  static const routeName = "/schedule-page";
+  static const route = "Schedule";
   const SchedulePage({super.key});
 
   @override
@@ -15,8 +16,9 @@ class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Column(
+    return CommonPage(
+      page: SchedulePage.route,
+      content: Column(
         crossAxisAlignment: size.width > 650
             ? CrossAxisAlignment.center
             : CrossAxisAlignment.start,
@@ -24,7 +26,6 @@ class _SchedulePageState extends State<SchedulePage> {
           const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Schedule", style: TextStyle(color: Colors.grey)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -71,7 +72,6 @@ class _SchedulePageState extends State<SchedulePage> {
           ),
         ],
       ),
-
     );
   }
 }

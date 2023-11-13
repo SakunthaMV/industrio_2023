@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:industrio_2023/constants.dart';
 import 'package:industrio_2023/models/responsive_layout.dart';
-import 'package:industrio_2023/pages/schedule/schedule_page.dart';
 import 'package:industrio_2023/pages/widgets/logo_button.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -81,7 +80,6 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         Row(
           children: List.generate(
             menuItems.length,
-
             (index) => TextButton(
               onPressed: (page ?? ModalRoute.of(context)?.settings.name) !=
                       menuItems[index]
@@ -96,11 +94,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                   letterSpacing: 1.1,
                   color: (page ?? ModalRoute.of(context)?.settings.name) ==
                           menuItems[index]
-                      ? colorScheme.tertiary
+                      ? colorScheme.secondary.withOpacity(0.8)
                       : colorScheme.primary,
                 ),
               ),
-
             ),
           ),
         ),
