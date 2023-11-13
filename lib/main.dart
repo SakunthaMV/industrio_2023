@@ -15,11 +15,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-      apiKey: "AIzaSyA50MvN9UizyjpNzhXsSBuV__-ANQ_EIrY",
-      projectId: "industrio-2023",
-      messagingSenderId: "719376501367",
-      appId: "1:719376501367:web:019ed3f28250c51cdcd472",
-      storageBucket: "industrio-2023.appspot.com",
+      apiKey: "AIzaSyA6GoeCI1emxEBL2UME3qCKCepD5FSBYcQ",
+      projectId: "industrio-2023-a0149",
+      messagingSenderId: "244375074954",
+      appId: "1:244375074954:web:c9969c9cda07856521d573",
+      storageBucket: "industrio-2023-a0149.appspot.com",
     ),
   );
   runApp(const MyApp());
