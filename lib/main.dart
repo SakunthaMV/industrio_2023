@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'INDUSTRIO 2023',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         useMaterial3: true,
         textTheme: TextTheme(
           titleMedium: GoogleFonts.openSans(),
